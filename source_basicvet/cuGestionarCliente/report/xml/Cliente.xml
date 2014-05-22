@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Propietario" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="direccionVet" class="java.lang.String"/>
+	<parameter name="telefonoVet" class="java.lang.String"/>
+	<parameter name="nombreVet" class="java.lang.String"/>
+	<parameter name="cuil" class="java.lang.String"/>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="apellido" class="java.lang.String"/>
+	<field name="telefono" class="java.lang.String"/>
+	<field name="dni" class="java.lang.String"/>
+	<title>
+		<band height="97" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="109" height="67"/>
+				<imageExpression class="java.lang.String"><![CDATA["./src/imagenes/imagenVeterinaria.jpg"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="134" y="39" width="432" height="14"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{direccionVet}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="134" y="53" width="57" height="14"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{telefonoVet}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="109" y="13" width="446" height="26"/>
+				<textElement>
+					<font fontName="Arial" size="20" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{nombreVet}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="235" y="53" width="106" height="14"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{cuil}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="109" y="53" width="25" height="14"/>
+				<textElement/>
+				<text><![CDATA[Tel: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="191" y="53" width="44" height="14"/>
+				<textElement/>
+				<text><![CDATA[C.U.I.L.: ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="79" width="555" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="2" y="79" width="145" height="18"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LISTA CLIENTES]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="20" backcolor="#666666"/>
+				<textElement/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="Nombre" x="61" y="0" width="111" height="20" forecolor="#FFFFFF"/>
+				<textElement textAlignment="Center">
+					<font fontName="&lt;Diferentes Valores&gt;" size="12"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="Apellido" x="172" y="0" width="95" height="20" forecolor="#FFFFFF"/>
+				<textElement textAlignment="Center">
+					<font fontName="&lt;Diferentes Valores&gt;" size="12"/>
+				</textElement>
+				<text><![CDATA[Apellido]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="Direccion" x="330" y="0" width="225" height="20" forecolor="#FFFFFF"/>
+				<textElement textAlignment="Center">
+					<font fontName="&lt;Diferentes Valores&gt;" size="12"/>
+				</textElement>
+			</staticText>
+			<staticText>
+				<reportElement key="Telefono" x="267" y="0" width="63" height="20" forecolor="#FFFFFF"/>
+				<textElement textAlignment="Center">
+					<font fontName="&lt;Diferentes Valores&gt;" size="12"/>
+				</textElement>
+				<text><![CDATA[Telefono]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="61" height="20" forecolor="#FFFFFF"/>
+				<textElement textAlignment="Center">
+					<font fontName="&lt;Diferentes Valores&gt;" size="12"/>
+				</textElement>
+				<text><![CDATA[DNI]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement x="61" y="4" width="111" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="&lt;Diferentes Valores&gt;"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="172" y="4" width="95" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="&lt;Diferentes Valores&gt;"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{apellido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="267" y="4" width="63" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="&lt;Diferentes Valores&gt;"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{telefono}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="4" width="61" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="&lt;Diferentes Valores&gt;"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{dni}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="26" width="555" height="1"/>
+			</line>
+		</band>
+	</pageFooter>
+</jasperReport>

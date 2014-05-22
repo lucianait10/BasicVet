@@ -1,0 +1,1123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="FichaClinica" language="groovy" pageWidth="595" pageHeight="842" columnWidth="515" leftMargin="40" rightMargin="40" topMargin="40" bottomMargin="40">
+	<property name="ireport.zoom" value="1.2396694214876032"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="279"/>
+	<field name="nFicha" class="java.lang.String"/>
+	<field name="idAnimal" class="java.lang.String"/>
+	<field name="nomAnimal" class="java.lang.String"/>
+	<field name="fecha" class="java.lang.String"/>
+	<field name="raza" class="java.lang.String"/>
+	<field name="edad" class="java.lang.String"/>
+	<field name="anamnesis" class="java.lang.String"/>
+	<field name="diagDiferencial" class="java.lang.String"/>
+	<field name="diagPresuntivo" class="java.lang.String"/>
+	<field name="pronostico" class="java.lang.String"/>
+	<field name="manCliTerap" class="java.lang.String"/>
+	<field name="temp" class="java.lang.String"/>
+	<field name="frecCardiaca" class="java.lang.String"/>
+	<field name="frecRespiratoria" class="java.lang.String"/>
+	<field name="estGral" class="java.lang.String"/>
+	<field name="mucOcular" class="java.lang.String"/>
+	<field name="mucGenital" class="java.lang.String"/>
+	<field name="mucBucal" class="java.lang.String"/>
+	<field name="mucOtros" class="java.lang.String"/>
+	<field name="hidratacion" class="java.lang.String"/>
+	<field name="ganLinfaticos" class="java.lang.String"/>
+	<field name="cavOral" class="java.lang.String"/>
+	<field name="palAbdominal" class="java.lang.String"/>
+	<field name="vomitos" class="java.lang.String"/>
+	<field name="disfagia" class="java.lang.String"/>
+	<field name="materiaFecal" class="java.lang.String"/>
+	<field name="ritmo" class="java.lang.String"/>
+	<field name="ascultacion" class="java.lang.String"/>
+	<field name="pulso" class="java.lang.String"/>
+	<field name="soplo" class="java.lang.String"/>
+	<field name="ecg" class="java.lang.String"/>
+	<field name="otrosCir" class="java.lang.String"/>
+	<field name="observacionC" class="java.lang.String"/>
+	<field name="observacionD" class="java.lang.String"/>
+	<field name="respiracion" class="java.lang.String"/>
+	<field name="auscultacion" class="java.lang.String"/>
+	<field name="refTusigneo" class="java.lang.String"/>
+	<field name="tos" class="java.lang.String"/>
+	<field name="observacionR" class="java.lang.String"/>
+	<field name="expM" class="java.lang.String"/>
+	<field name="secrecionesM" class="java.lang.String"/>
+	<field name="tactoRectal" class="java.lang.String"/>
+	<field name="expH" class="java.lang.String"/>
+	<field name="secrecionesH" class="java.lang.String"/>
+	<field name="glaMamarias" class="java.lang.String"/>
+	<field name="observacionG" class="java.lang.String"/>
+	<field name="observacionL" class="java.lang.String"/>
+	<field name="lesion" class="java.lang.String"/>
+	<field name="ubicacion" class="java.lang.String"/>
+	<field name="paralisis" class="java.lang.String"/>
+	<field name="convulsiones" class="java.lang.String"/>
+	<field name="ataxia" class="java.lang.String"/>
+	<field name="reflejo" class="java.lang.String"/>
+	<field name="sensibilidad" class="java.lang.String"/>
+	<field name="conducta" class="java.lang.String"/>
+	<field name="sensorio" class="java.lang.String"/>
+	<field name="otrosN" class="java.lang.String"/>
+	<field name="observacionN" class="java.lang.String"/>
+	<field name="izquierdo" class="java.lang.String"/>
+	<field name="derecho" class="java.lang.String"/>
+	<field name="observacionO" class="java.lang.String"/>
+	<field name="tipoLesion" class="java.lang.String"/>
+	<field name="forma" class="java.lang.String"/>
+	<field name="ubicacionP" class="java.lang.String"/>
+	<field name="simetria" class="java.lang.String"/>
+	<field name="olorP" class="java.lang.String"/>
+	<field name="prurito" class="java.lang.String"/>
+	<field name="mantoPiloso" class="java.lang.String"/>
+	<field name="ectoparasitos" class="java.lang.String"/>
+	<field name="oidoIzq" class="java.lang.String"/>
+	<field name="oidoDer" class="java.lang.String"/>
+	<field name="observacionP" class="java.lang.String"/>
+	<field name="vejiga" class="java.lang.String"/>
+	<field name="orina" class="java.lang.String"/>
+	<field name="otrosU" class="java.lang.String"/>
+	<field name="observacionU" class="java.lang.String"/>
+	<group name="FichaClinica">
+		<groupExpression><![CDATA[$V{REPORT_COUNT}]]></groupExpression>
+		<groupHeader>
+			<band height="704" splitType="Prevent">
+				<staticText>
+					<reportElement x="0" y="0" width="515" height="31"/>
+					<textElement textAlignment="Center">
+						<font size="20" isBold="true" isItalic="true"/>
+					</textElement>
+					<text><![CDATA[FICHA CLINICA]]></text>
+				</staticText>
+				<line>
+					<reportElement x="1" y="30" width="515" height="1"/>
+				</line>
+				<textField>
+					<reportElement x="81" y="50" width="100" height="20"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{idAnimal}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="1" y="50" width="80" height="20"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Numero Animal:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="182" y="50" width="38" height="20"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Animal:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="220" y="50" width="100" height="20"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{nomAnimal}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="324" y="50" width="28" height="20"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Raza:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="352" y="50" width="100" height="20"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{raza}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="453" y="50" width="28" height="20"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Edad:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="481" y="50" width="35" height="20"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{edad}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="2" y="70" width="514" height="1"/>
+				</line>
+				<textField>
+					<reportElement x="81" y="31" width="100" height="20"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{nFicha}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="1" y="31" width="80" height="20"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Numero Ficha:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="352" y="31" width="38" height="20"/>
+					<textElement>
+						<font isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Fecha:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="390" y="31" width="100" height="20"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{fecha}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="1" y="71" width="58" height="16"/>
+					<textElement>
+						<font isBold="true" isItalic="true"/>
+					</textElement>
+					<text><![CDATA[Anamnesis:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="1" y="87" width="515" height="30"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{anamnesis}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="1" y="117" width="117" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Diagnostico Diferencial:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="118" y="117" width="398" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{diagDiferencial}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="118" y="131" width="398" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{diagPresuntivo}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="1" y="131" width="116" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Diagnostico Presuntivo:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="1" y="146" width="57" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Pronostico:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="59" y="147" width="457" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{pronostico}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="1" y="161" width="135" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Manejo Clinico Terapeutico:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="137" y="161" width="379" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{manCliTerap}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="1" y="185" width="132" height="16"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Exploracion General:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="2" y="201" width="68" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Temperatura:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="70" y="201" width="64" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{temp}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="140" y="201" width="102" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Frecuencia Cardiaca:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="242" y="201" width="78" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{frecCardiaca}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="333" y="201" width="119" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Frecuencia Respiratoria:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="451" y="201" width="65" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{frecRespiratoria}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="2" y="215" width="79" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Estado General:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="82" y="215" width="434" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{estGral}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="2" y="229" width="78" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Mucosa Ocular:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="80" y="229" width="436" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{mucOcular}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="1" y="244" width="79" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Mucosa Genital:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="80" y="244" width="436" height="14"/>
+					<textElement>
+						<font isBold="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{mucGenital}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="1" y="258" width="72" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Mucosa Bucal:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="73" y="258" width="443" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{mucBucal}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="2" y="272" width="71" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Mucosa Otros:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="73" y="272" width="443" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{mucOtros}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="3" y="286" width="67" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Hidratacion:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="70" y="286" width="446" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{hidratacion}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="1" y="300" width="100" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Ganglios Linfaticos:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="101" y="300" width="415" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{ganLinfaticos}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="1" y="331" width="100" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Cavidad Oral:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="103" y="331" width="413" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{cavOral}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="1" y="315" width="100" height="16"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Digestivo:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="120" y="345" width="396" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{palAbdominal}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="2" y="345" width="116" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Palpacion Abdominal:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="103" y="359" width="413" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{vomitos}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="1" y="359" width="100" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Vomitos:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="104" y="373" width="412" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{disfagia}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="2" y="373" width="100" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Disfagia:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="103" y="387" width="413" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{materiaFecal}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="1" y="387" width="100" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Materia Facal:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="446" width="100" height="16"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Circulatorio:]]></text>
+				</staticText>
+				<line>
+					<reportElement x="2" y="176" width="514" height="1"/>
+				</line>
+				<line>
+					<reportElement x="3" y="314" width="513" height="1"/>
+				</line>
+				<line>
+					<reportElement x="1" y="445" width="514" height="1"/>
+				</line>
+				<textField>
+					<reportElement x="100" y="461" width="416" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{ritmo}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="1" y="461" width="100" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Ritmo:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="1" y="474" width="100" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Ascultacion:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="100" y="474" width="416" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{ascultacion}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="1" y="487" width="100" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Pulso:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="100" y="487" width="416" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{pulso}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="500" width="100" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Soplo:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="100" y="500" width="416" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{soplo}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="1" y="518" width="100" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Ecg:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="103" y="518" width="413" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{ecg}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="1" y="532" width="100" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Otros:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="103" y="532" width="413" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{otrosCir}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="1" y="589" width="515" height="1"/>
+				</line>
+				<line>
+					<reportElement x="0" y="699" width="515" height="1"/>
+				</line>
+				<staticText>
+					<reportElement x="1" y="545" width="100" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Observacion:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="1" y="558" width="515" height="30"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{observacionC}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="415" width="515" height="30"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{observacionD}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="1" y="401" width="100" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Observacion:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="656" width="100" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Observaciones:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="100" y="630" width="416" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{auscultacion}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="1" y="630" width="100" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Auscultacion:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="100" y="604" width="416" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{respiracion}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="100" y="643" width="416" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{refTusigneo}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="669" width="515" height="30"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{observacionR}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="1" y="617" width="100" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Tos:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="1" y="604" width="100" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Respiracion:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="1" y="643" width="100" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Reflejo Tusigneo:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="100" y="617" width="416" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{tos}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="589" width="100" height="16"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Respiratorio:]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="762" splitType="Prevent">
+				<textField>
+					<reportElement x="100" y="67" width="416" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{secrecionesH}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="15" width="100" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Exp:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="99" y="28" width="416" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{secrecionesM}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="0" width="100" height="16"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Genital:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="99" y="15" width="416" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{expM}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="67" width="100" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Secreciones:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="99" y="41" width="416" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{tactoRectal}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="41" width="100" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Tacto Rectal:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="28" width="100" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Secreciones:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="99" y="54" width="416" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{expH}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="54" width="100" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Exp:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="80" width="109" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Glandulas Mamarias:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="109" y="80" width="406" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{glaMamarias}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="106" width="515" height="30"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{observacionR}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="93" width="100" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Observaciones:]]></text>
+				</staticText>
+				<line>
+					<reportElement x="1" y="136" width="515" height="1"/>
+				</line>
+				<staticText>
+					<reportElement x="0" y="165" width="109" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Ubicacion:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="178" width="100" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Observaciones:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="152" width="100" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Lesion:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="109" y="165" width="406" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{ubicacion}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="99" y="152" width="416" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{lesion}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="191" width="515" height="30"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{observacionL}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="137" width="100" height="16"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Locomotor:]]></text>
+				</staticText>
+				<line>
+					<reportElement x="1" y="221" width="515" height="1"/>
+				</line>
+				<staticText>
+					<reportElement x="0" y="237" width="100" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Paralisis:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="263" width="100" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Ataxia:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="99" y="237" width="416" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{paralisis}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="302" width="109" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Conducta:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="341" width="100" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Observaciones:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="276" width="100" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Reflejos:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="99" y="276" width="416" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{reflejo}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="289" width="100" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Sensibilidad:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="99" y="250" width="416" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{convulsiones}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="250" width="100" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Convulsiones:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="99" y="263" width="416" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{ataxia}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="109" y="302" width="406" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{conducta}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="99" y="289" width="416" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{sensibilidad}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="354" width="515" height="30"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{observacionN}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="222" width="100" height="16"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Nervioso:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="99" y="315" width="416" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{sensorio}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="328" width="109" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Otros:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="315" width="100" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Sensorio:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="109" y="328" width="406" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{otrosN}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="1" y="398" width="100" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Izquierdo:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="1" y="411" width="109" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Derecho:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="1" y="383" width="100" height="16"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Ojos:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="100" y="398" width="416" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{izquierdo}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="1" y="437" width="515" height="30"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{observacionO}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="1" y="424" width="100" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Observaciones:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="110" y="411" width="406" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{derecho}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="1" y="382" width="515" height="1"/>
+				</line>
+				<line>
+					<reportElement x="1" y="466" width="515" height="1"/>
+				</line>
+				<textField>
+					<reportElement x="110" y="495" width="406" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{forma}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="1" y="611" width="100" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Observaciones:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="1" y="624" width="515" height="30"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{observacionP}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="100" y="482" width="416" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{tipoLesion}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="1" y="467" width="100" height="16"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Piel:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="1" y="495" width="109" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Forma:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="1" y="482" width="100" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Tipo Lesion:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="110" y="521" width="406" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{simetria}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="100" y="508" width="416" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{ubicacionP}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="1" y="508" width="100" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Ubicacion:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="1" y="521" width="109" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Simetria:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="1" y="559" width="100" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Manto Piloso:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="110" y="572" width="406" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{ectoparasitos}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="110" y="546" width="406" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{prurito}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="1" y="572" width="109" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Ectoparasitos:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="100" y="533" width="416" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{olorP}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="100" y="559" width="416" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{mantoPiloso}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="1" y="533" width="100" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Olor:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="1" y="546" width="109" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Prurito:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="100" y="585" width="416" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{oidoIzq}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="110" y="598" width="406" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{oidoDer}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="1" y="598" width="109" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Oido Derecho:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="1" y="585" width="100" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Oido Izquierdo:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="1" y="653" width="100" height="16"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Urinario:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="110" y="668" width="406" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{vejiga}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="1" y="694" width="109" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Otros:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="1" y="720" width="515" height="30"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{observacionU}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="100" y="681" width="416" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{orina}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="1" y="668" width="109" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Vejiga:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="110" y="694" width="406" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{otrosU}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="1" y="681" width="100" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Orina:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="1" y="707" width="100" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Observaciones:]]></text>
+				</staticText>
+				<line>
+					<reportElement x="1" y="653" width="515" height="1"/>
+				</line>
+				<line>
+					<reportElement x="1" y="749" width="515" height="1"/>
+				</line>
+			</band>
+		</groupFooter>
+	</group>
+</jasperReport>

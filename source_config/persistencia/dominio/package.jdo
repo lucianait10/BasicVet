@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE jdo PUBLIC
+    "-//Sun Microsystems, Inc.//DTD Java Data Objects Metadata 2.0//EN"
+    "http://java.sun.com/dtd/jdo_2_0.dtd">
+<jdo>
+    <package name="persistencia.dominio">
+        <class name="FichaClinica">
+            <field name="id" primary-key="true" value-strategy="identity" persistence-modifier="persistent"/>
+            <field name="anamnesis" persistence-modifier="persistent"/>
+            <field name="diagnosticoDiferencial" persistence-modifier="persistent"/>
+            <field name="diagnosticoPresuntivo" persistence-modifier="persistent"/>
+            <field name="pronostico" persistence-modifier="persistent"/>
+            <field name="manejoClinicoTerapeutico" persistence-modifier="persistent"/>
+            <field name="fecha" persistence-modifier="persistent"/>
+            <field name="estudios" persistence-modifier="persistent">
+                <collection element-type="persistencia.dominio.EstudioComplementario"/>
+            </field>
+        </class>
+        <class name="Locomotor">
+            <field name="id" primary-key="true" value-strategy="identity" persistence-modifier="persistent"/>
+            <field name="lesion" persistence-modifier="persistent"/>
+            <field name="ubicacion" persistence-modifier="persistent"/>
+            <field name="observaciones" persistence-modifier="persistent"/>
+            <field name="ficha" persistence-modifier="persistent">
+            	<foreign-key name="FICHA_LOCOMOTOR_FK" delete-action="cascade"/>
+            </field>
+        </class>
+        <class name="Respiratorio">
+            <field name="id" primary-key="true" value-strategy="identity" persistence-modifier="persistent"/>
+            <field name="respiracion" persistence-modifier="persistent"/>
+            <field name="tos" persistence-modifier="persistent"/>
+            <field name="auscultacion" persistence-modifier="persistent"/>
+            <field name="reflejoTusigeno" persistence-modifier="persistent"/>
+            <field name="observaciones" persistence-modifier="persistent"/>
+            <field name="ficha" persistence-modifier="persistent">
+            	<foreign-key name="FICHA_RESPIRATORIO_FK" delete-action="cascade"/>
+            </field>
+        </class>
+        <class name="Genital">
+            <field name="id" primary-key="true" value-strategy="identity" persistence-modifier="persistent"/>
+            <field name="machoExp" persistence-modifier="persistent"/>
+            <field name="machoSecreciones" persistence-modifier="persistent"/>
+            <field name="machoTactoRectal" persistence-modifier="persistent"/>
+            <field name="hembraExp" persistence-modifier="persistent"/>
+            <field name="hembraSecreciones" persistence-modifier="persistent"/>
+            <field name="hembraGlanMamarias" persistence-modifier="persistent"/>
+            <field name="observaciones" persistence-modifier="persistent"/>
+            <field name="ficha" persistence-modifier="persistent">
+            	<foreign-key name="FICHA_GENITAL_FK" delete-action="cascade"/>
+            </field>
+        </class>
+        <class name="Piel">
+            <field name="id" primary-key="true" value-strategy="identity" persistence-modifier="persistent"/>
+            <field name="tipoLesion" persistence-modifier="persistent"/>
+            <field name="forma" persistence-modifier="persistent"/>
+            <field name="ubicacion" persistence-modifier="persistent"/>
+            <field name="simetrica" persistence-modifier="persistent"/>
+            <field name="olor" persistence-modifier="persistent"/>
+            <field name="prurito" persistence-modifier="persistent"/>
+            <field name="mantoPiloso" persistence-modifier="persistent"/>
+            <field name="ectoparasitos" persistence-modifier="persistent"/>
+            <field name="oidoIzq" persistence-modifier="persistent"/>
+            <field name="oidoDer" persistence-modifier="persistent"/>
+            <field name="observaciones" persistence-modifier="persistent"/>
+            <field name="ficha" persistence-modifier="persistent">
+            	<foreign-key name="FICHA_PIEL_FK" delete-action="cascade"/>
+            </field>
+        </class>
+        <class name="Digestivo">
+            <field name="id" primary-key="true" value-strategy="identity" persistence-modifier="persistent"/>
+            <field name="cavidadOral" persistence-modifier="persistent"/>
+            <field name="palpacionAbd" persistence-modifier="persistent"/>
+            <field name="vomitos" persistence-modifier="persistent"/>
+            <field name="disfagia" persistence-modifier="persistent"/>
+            <field name="materiaFecal" persistence-modifier="persistent"/>
+            <field name="observaciones" persistence-modifier="persistent"/>
+            <field name="ficha" persistence-modifier="persistent">
+            	<foreign-key name="FICHA_DIGESTIVO_FK" delete-action="cascade"/>
+            </field>
+        </class>
+        <class name="Animal">
+        	<field name="id" primary-key="true" value-strategy="identity" persistence-modifier="persistent"/>
+            <field name="nro" persistence-modifier="persistent"/>
+            <field name="nombre" persistence-modifier="persistent"/>
+            <field name="raza" persistence-modifier="persistent"/>
+            <field name="edad" persistence-modifier="persistent"/>
+            <field name="fechaNac" persistence-modifier="persistent"/>
+            <field name="especie" persistence-modifier="persistent"/>
+            <field name="propietario" persistence-modifier="persistent">
+            	<column name="PROPIETARIO_ID"/>
+            	<foreign-key name="PROPIETARIO_FK" delete-action="null"/>
+            </field>
+            <field name="turnos" persistence-modifier="persistent">
+                <collection element-type="persistencia.dominio.Turno"/>
+            </field>
+            <field name="fichas" persistence-modifier="persistent">
+                <collection element-type="persistencia.dominio.FichaClinica"/>
+            </field>
+            <field name="eliminado" persistence-modifier="persistent"/>
+        </class>
+		<class name="Horario">
+			<field name="id" primary-key="true" value-strategy="identity"  persistence-modifier="persistent"/>
+            <field name="fila" persistence-modifier="persistent"/>
+            <field name="columna" persistence-modifier="persistent"/>
+        </class>
+        <class name="Turno">
+        	<field name="id" primary-key="true" value-strategy="identity"  persistence-modifier="persistent"/>
+            <field name="fecha" persistence-modifier="persistent"/>
+            <field name="hora" persistence-modifier="persistent"/>
+			<field name="idAnimal" persistence-modifier="persistent"/>
+			<field name="animal" persistence-modifier="persistent">
+            	<column name="ANIMAL_NRO"/>
+            </field>
+			<field name="horarios" persistence-modifier="persistent">
+				<collection element-type="persistencia.dominio.Horario"/>
+			</field>
+        </class>
+        <class name="ExploracionGeneral">
+            <field name="id" primary-key="true" value-strategy="identity" persistence-modifier="persistent"/>
+            <field name="temperatura" persistence-modifier="persistent"/>
+            <field name="fc" persistence-modifier="persistent"/>
+            <field name="fr" persistence-modifier="persistent"/>
+            <field name="estadoGral" persistence-modifier="persistent"/>
+            <field name="mucosaOcular" persistence-modifier="persistent"/>
+            <field name="mucosaGenital" persistence-modifier="persistent"/>
+            <field name="mucosaBucal" persistence-modifier="persistent"/>
+            <field name="mucosaOtros" persistence-modifier="persistent"/>
+            <field name="hidratacion" persistence-modifier="persistent"/>
+            <field name="gangliosLinfaticos" persistence-modifier="persistent"/>
+            <field name="ficha" persistence-modifier="persistent">
+            	<foreign-key name="FICHA_EXPGRAL_FK" delete-action="cascade"/>
+            </field>
+        </class>
+        <class name="Ojos">
+            <field name="id" primary-key="true" value-strategy="identity" persistence-modifier="persistent"/>
+            <field name="izquierdo" persistence-modifier="persistent"/>
+            <field name="derecho" persistence-modifier="persistent"/>
+            <field name="observaciones" persistence-modifier="persistent"/>
+            <field name="ficha" persistence-modifier="persistent">
+            	<foreign-key name="FICHA_OJOS_FK" delete-action="cascade"/>
+            </field>
+        </class>
+        <class name="Propietario">
+        	<field name="dni" persistence-modifier="persistent">
+            	<unique name="DNI_UNICO"/>
+            </field>
+            <field name="nombre" persistence-modifier="persistent"/>
+            <field name="apellido" persistence-modifier="persistent"/>
+            <field name="telefono" persistence-modifier="persistent"/>
+            <field name="cuil" persistence-modifier="persistent"/>
+            <field name="eliminado" persistence-modifier="persistent"/> 
+            <field name="direccion" persistence-modifier="persistent"/>
+            <field name="animales" persistence-modifier="persistent">
+                <collection element-type="persistencia.dominio.Animal"/>
+                <foreign-key name="PROPIETARIO_ANIMALES_FK" delete-action="cascade"/>
+            </field>
+        </class>
+        <class name="Urinario">
+            <field name="id" primary-key="true" value-strategy="identity" persistence-modifier="persistent"/>
+            <field name="vejiga" persistence-modifier="persistent"/>
+            <field name="orina" persistence-modifier="persistent"/>
+            <field name="otros" persistence-modifier="persistent"/>
+            <field name="observaciones" persistence-modifier="persistent"/>
+            <field name="ficha" persistence-modifier="persistent">
+            	<foreign-key name="FICHA_URINARIO_FK" delete-action="cascade"/>
+            </field>
+        </class>
+        <class name="Circulatorio">
+            <field name="id" primary-key="true" value-strategy="identity" persistence-modifier="persistent"/>
+            <field name="ritmo" persistence-modifier="persistent"/>
+            <field name="ascultacion" persistence-modifier="persistent"/>
+            <field name="pulso" persistence-modifier="persistent"/>
+            <field name="soplo" persistence-modifier="persistent"/>
+            <field name="ecg" persistence-modifier="persistent"/>
+            <field name="otros" persistence-modifier="persistent"/>
+            <field name="observaciones" persistence-modifier="persistent"/>
+            <field name="ficha" persistence-modifier="persistent">
+            	<foreign-key name="FICHA_CIRCULATORIO_FK" delete-action="cascade"/>
+            </field>
+        </class>
+        <class name="Nervioso">
+            <field name="id" primary-key="true" value-strategy="identity" persistence-modifier="persistent"/>
+            <field name="paralisis" persistence-modifier="persistent"/>
+            <field name="convulsiones" persistence-modifier="persistent"/>
+            <field name="ataxia" persistence-modifier="persistent"/>
+            <field name="reflejos" persistence-modifier="persistent"/>
+            <field name="sensibilidad" persistence-modifier="persistent"/>
+            <field name="conducta" persistence-modifier="persistent"/>
+            <field name="sensorio" persistence-modifier="persistent"/>
+            <field name="otros" persistence-modifier="persistent"/>
+            <field name="observaciones" persistence-modifier="persistent"/>
+            <field name="ficha" persistence-modifier="persistent">
+            	<foreign-key name="FICHA_NERVIOSO_FK" delete-action="cascade"/>
+            </field>
+        </class>
+        <class name="Producto">
+        	<field name="id" primary-key="true" value-strategy="identity"  persistence-modifier="persistent"/>
+        	<field name="precio" default-value="0" persistence-modifier="persistent"/>
+        	<field name="nombre" persistence-modifier="persistent"/>
+        	<field name="descripcion" persistence-modifier="persistent"/>
+        	<field name="tipo" persistence-modifier="persistent"/>
+            <field name="cantidad" default-value="0" persistence-modifier="persistent"/>
+        </class>
+        <class name="Medicamento" persistence-capable-superclass="Producto">
+        <inheritance strategy="new-table"/>
+        	<field name="laboratorio" persistence-modifier="persistent"/>
+        </class>
+        <class name="Vacuna" persistence-capable-superclass="Medicamento">
+        <inheritance strategy="new-table"/>
+            <field name="serie" persistence-modifier="persistent"/>
+        </class>
+        <class name="Anticonceptivo" persistence-capable-superclass="Medicamento">
+        <inheritance strategy="new-table"/>
+        </class>
+        <class name="Antiparasitario" persistence-capable-superclass="Medicamento">
+        <inheritance strategy="new-table"/>
+        </class>
+         <class name="Dosis">
+        	<field name="id" primary-key="true" value-strategy="identity"  persistence-modifier="persistent"/>
+            <field name="via" persistence-modifier="persistent"/>
+            <field name="cant" default-value="0" persistence-modifier="persistent"/>
+            <field name="fecha" persistence-modifier="persistent"/>
+            <field name="fechaProxDosis" persistence-modifier="persistent"/>
+            <field name="medicamento" persistence-modifier="persistent"/>
+        </class>
+        <class name="Cartilla">
+        	<field name="id" primary-key="true" value-strategy="identity"  persistence-modifier="persistent"/>
+            <field name="fechaCreacion" persistence-modifier="persistent"/>
+            <field name="dosis" persistence-modifier="persistent">
+            	<foreign-key name="CARTILLA_DOSIS_FK" delete-action="cascade"/>
+                <collection element-type="persistencia.dominio.Dosis"/>
+				<foreign-key name="CART_DOSIS_FK" delete-action="cascade"/>
+            </field>
+            <field name="animal" persistence-modifier="persistent">
+            	<foreign-key name="ANIMAL_CARTILLA_FK" delete-action="cascade"/>
+            </field>
+		</class>
+		<class name="Motivo">
+			<field name="nombre"/>
+		</class>
+		<class name="Raza">
+			<field name="nombre"/>
+		</class>
+		<class name="Especie">
+			<field name="nombre"/>
+			<field name="razas">
+				<collection element-type="persistencia.dominio.Raza"/>
+			</field>	
+		</class>
+		<class name="BasicVet">
+			<field name="path" persistence-modifier="persistent"/>
+			<field name="nombre" persistence-modifier="persistent"/>
+			<field name="direccion" persistence-modifier="persistent"/>
+			<field name="telefono" persistence-modifier="persistent"/>
+			<field name="cuil" persistence-modifier="persistent"/>
+            <field name="id" primary-key="true" persistence-modifier="persistent"/>
+		</class>
+		<class name="Usuario">
+			<field name="nombre" primary-key="true" persistence-modifier="persistent"/>
+			<field name="password" persistence-modifier="persistent"/>
+		</class>
+		<class name="Veterinario">
+        	<field name="dni" persistence-modifier="persistent">
+            	<unique name="DNI_UNICO"/>
+            </field>
+            <field name="nombre" persistence-modifier="persistent"/>
+            <field name="apellido" persistence-modifier="persistent"/>
+            <field name="telefono" persistence-modifier="persistent"/>
+            <field name="cuil" persistence-modifier="persistent"/>
+            <field name="eliminado" persistence-modifier="persistent"/> 
+            <field name="matricula" persistence-modifier="persistent"/>
+		</class>
+		<class name="Proveedor">
+        	<field name="dni" persistence-modifier="persistent">
+            	<unique name="DNI_UNICO"/>
+            </field>
+            <field name="nombre" persistence-modifier="persistent"/>
+            <field name="apellido" persistence-modifier="persistent"/>
+            <field name="telefono" persistence-modifier="persistent"/>
+            <field name="cuil" persistence-modifier="persistent"/>
+            <field name="eliminado" persistence-modifier="persistent"/> 
+		</class>
+		<class name="EstudioComplementario">
+			<field name="id" primary-key="true" value-strategy="identity" persistence-modifier="persistent"/>
+			<field name="fecha" persistence-modifier="persistent"/>
+			<field name="informe" persistence-modifier="persistent"/>
+			<field name="path" persistence-modifier="persistent"/>
+			<field name="tipo" persistence-modifier="persistent"/>
+		</class>
+		<class name="TipoEstudio">
+			<field name="tipo" persistence-modifier="persistent"/>
+		</class>
+	<class name="Cliente">
+           <field name="dni" persistence-modifier="persistent">
+            	<unique name="DNI_UNICO"/>
+            </field>
+            <field name="nombre" persistence-modifier="persistent"/>
+            <field name="apellido" persistence-modifier="persistent"/>
+            <field name="telefono" persistence-modifier="persistent"/>
+            <field name="cuil" persistence-modifier="persistent"/>
+            <field name="eliminado" persistence-modifier="persistent"/> 
+	</class>
+	<class name="Compra">
+	   <field name="id" primary-key="true" value-strategy="identity"  persistence-modifier="persistent"/>
+	   <field name="totalCompra" default-value="0" persistence-modifier="persistent"/>
+	   <field name="precioUnitario" default-value="0" persistence-modifier="persistent"/>	
+	   <field name="fecha" persistence-modifier="persistent"/>
+	   <field name="proveedor" persistence-modifier="persistent">
+	   	<foreign-key name="PROVEEDOR_COMPRA_FK" delete-action="cascade"/>
+	   </field>
+	   <field name="prod" persistence-modifier="persistent">
+	   	<foreign-key name="PRODUCTO_COMPRA_FK" delete-action="cascade"/>
+	   </field>
+	   <field name="cantidadCompra" default-value="0" persistence-modifier="persistent"/>	
+	</class>
+	<class name="Venta">
+	   <field name="id" primary-key="true" value-strategy="identity"  persistence-modifier="persistent"/>
+	   <field name="cliente" persistence-modifier="persistent">
+	   	<foreign-key name="CLIENTE_VENTA_FK" delete-action="cascade"/>
+	   </field>
+	   <field name="prodVenta" persistence-modifier="persistent">
+	   	<foreign-key name="PRODUCTO_VENTA_FK" delete-action="cascade"/>
+	   </field>
+	   <field name="fechaVenta" persistence-modifier="persistent"/>
+	   <field name="cantidadVenta" default-value="0" persistence-modifier="persistent"/>	
+	   <field name="precioUnitario" default-value="0" persistence-modifier="persistent"/>
+	   <field name="totalVenta" default-value="0" persistence-modifier="persistent"/>	
+	</class>
+
+    </package>
+</jdo>
